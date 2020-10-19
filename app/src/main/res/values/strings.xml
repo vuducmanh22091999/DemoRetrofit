@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DemoRetrofit</string>
+    <string name="api_key_movie">176fa03204ca73806a14b489cfc31842</string>
+    <string name="switch_act">Switch Activity</string>
+</resources>

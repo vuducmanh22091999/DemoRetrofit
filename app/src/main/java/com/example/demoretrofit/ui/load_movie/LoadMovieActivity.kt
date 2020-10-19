@@ -20,17 +20,13 @@ class LoadMovieActivity : AppCompatActivity() {
         setContentView(R.layout.activity_load_movie)
 
         loadMovieViewModel.setViewModel(getString(R.string.api_key_movie))
-        initRecyclerView()
-        setUpRecyclerView()
-    }
-
-    private fun initRecyclerView() {
         loadMovieViewModel.movie.observe(this, Observer {
-            loadMovieAdapter = LoadMovieAdapter(it.listsMovie)
+            setUpRecyclerView(it)
         })
     }
 
-    private fun setUpRecyclerView() {
+    private fun setUpRecyclerView(dataMovie: DataMovie) {
+        loadMovieAdapter = LoadMovieAdapter(dataMovie.listsMovie)
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rcvLoadMovie.setHasFixedSize(true)
         rcvLoadMovie.layoutManager = linearLayoutManager

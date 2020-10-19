@@ -8,7 +8,7 @@ import com.example.demoretrofit.R
 import com.example.demoretrofit.data.entities.DataListMovie
 import kotlinx.android.synthetic.main.item_movie.view.*
 
-class LoadMovieAdapter(private val listMovie: List<DataListMovie>): RecyclerView.Adapter<LoadMovieAdapter.ViewHolder>() {
+class LoadMovieAdapter(private var listMovie: List<DataListMovie>): RecyclerView.Adapter<LoadMovieAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindData(dataListMovie: DataListMovie) {
             itemView.itemMovies.text = dataListMovie.title

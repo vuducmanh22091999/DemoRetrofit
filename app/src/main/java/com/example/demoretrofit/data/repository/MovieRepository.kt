@@ -4,4 +4,6 @@ import com.example.demoretrofit.data.remote.MovieServices
 
 class MovieRepository (private val movieServices: MovieServices) {
     suspend fun getAllMovie(apiKey: String) = movieServices.getListMovie(apiKey)
+
+    suspend fun getAllCategories(xApiKey: String) = movieServices.getCategories(xApiKey)
 }
